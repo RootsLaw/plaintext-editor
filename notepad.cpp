@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 int main()
 {
 	bool running = true;
@@ -14,6 +15,18 @@ int main()
 			
 			if(choice == 1){ 
 				std::cout<<"You chose: Open\n";
+				std::ifstream file("myfile.txt");
+
+				if (file) {
+					std::string line;
+	
+				while(std::getline(file, line)) {
+					std::cout <<line <<"\n";
+						}
+						}
+				else {
+		std::cout << "Could  not open. \n";
+		}
 			}
 			else if(choice == 2){
 				         std::cout<<"You chose: Save\n";
@@ -25,3 +38,4 @@ int main()
 			
 	}
 }
+
